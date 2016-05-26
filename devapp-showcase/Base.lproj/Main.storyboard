@@ -53,8 +53,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-wG-vVb" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
                                 <rect key="frame" x="16" y="76" width="343" height="571"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-DW-vKD">
-                                        <rect key="frame" x="20" y="327" width="303" height="200"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-DW-vKD">
+                                        <rect key="frame" x="20" y="320" width="303" height="207"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="D4S-od-67O">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="35"/>
@@ -68,8 +68,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSz-0r-CfL" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
                                                         <rect key="frame" x="28" y="0.0" width="275" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email@example.com" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKg-Kn-GMq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="133" height="35"/>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email@example.com" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKg-Kn-GMq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="35"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -89,7 +89,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7UG-U3-o8q">
-                                                <rect key="frame" x="0.0" y="55" width="303" height="35"/>
+                                                <rect key="frame" x="0.0" y="57.5" width="303" height="35"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock_outline" translatesAutoresizingMaskIntoConstraints="NO" id="pQu-U7-85e">
                                                         <rect key="frame" x="0.0" y="0.0" width="23" height="35"/>
@@ -100,8 +100,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-k0-9qA" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
                                                         <rect key="frame" x="28" y="0.0" width="275" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abb-KD-BT9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="66" height="35"/>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abb-KD-BT9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="35"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -119,9 +119,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="3uU-J0-BQq"/>
                                                 </constraints>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="55" width="303" height="35"/>
+                                                </variation>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-7x-mZt" customClass="MaterialButton" customModule="devapp_showcase" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="110" width="303" height="35"/>
+                                                <rect key="frame" x="0.0" y="114.5" width="303" height="35"/>
                                                 <color key="backgroundColor" red="0.5725490196078431" green="0.81960784313725488" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="oci-HM-yAU"/>
@@ -130,9 +133,12 @@
                                                 <state key="normal" title="Log in / Sign up">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="110" width="303" height="35"/>
+                                                </variation>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cb-OM-6rL">
-                                                <rect key="frame" x="0.0" y="165" width="303" height="35"/>
+                                                <rect key="frame" x="0.0" y="172" width="303" height="35"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="vO4-CX-wYq">
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
@@ -158,6 +164,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Bli-SN-Sws"/>
                                                 </constraints>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="165" width="303" height="35"/>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -170,6 +179,9 @@
                                             <constraint firstItem="7UG-U3-o8q" firstAttribute="leading" secondItem="0WR-DW-vKD" secondAttribute="leading" id="uli-Z3-DsD"/>
                                             <constraint firstAttribute="trailing" secondItem="D4S-od-67O" secondAttribute="trailing" id="zJV-sM-koL"/>
                                         </constraints>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="180" width="303" height="200"/>
+                                        </variation>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="code-logo" translatesAutoresizingMaskIntoConstraints="NO" id="CH2-2n-qCi">
                                         <rect key="frame" x="82" y="40" width="178" height="180"/>
@@ -184,8 +196,15 @@
                                     <constraint firstItem="CH2-2n-qCi" firstAttribute="centerX" secondItem="ScQ-wG-vVb" secondAttribute="centerX" id="BaQ-St-SBd"/>
                                     <constraint firstAttribute="trailing" secondItem="0WR-DW-vKD" secondAttribute="trailing" constant="20" id="K76-kE-SFj"/>
                                     <constraint firstItem="0WR-DW-vKD" firstAttribute="leading" secondItem="ScQ-wG-vVb" secondAttribute="leading" constant="20" id="VWL-DH-vDx"/>
-                                    <constraint firstAttribute="bottom" secondItem="0WR-DW-vKD" secondAttribute="bottom" constant="44" id="W1m-sI-jnR"/>
-                                    <constraint firstItem="CH2-2n-qCi" firstAttribute="top" secondItem="ScQ-wG-vVb" secondAttribute="top" constant="40" id="fDc-P6-LRH"/>
+                                    <constraint firstAttribute="bottom" secondItem="0WR-DW-vKD" secondAttribute="bottom" constant="44" id="W1m-sI-jnR">
+                                        <variation key="heightClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="0WR-DW-vKD" firstAttribute="top" secondItem="CH2-2n-qCi" secondAttribute="bottom" constant="100" id="WH9-QT-qLl">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="CH2-2n-qCi" firstAttribute="top" secondItem="ScQ-wG-vVb" secondAttribute="top" constant="40" id="fDc-P6-LRH">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="heightClass=compact">
                                     <mask key="subviews">
