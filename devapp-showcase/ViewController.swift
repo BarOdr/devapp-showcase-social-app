@@ -53,19 +53,38 @@ class ViewController: UIViewController {
                         self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                     }
                 })
-                
-
             }
-        
         }
     }
 
     @IBAction func attemptLogin(sender: UIButton!) {
         
         if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "" {
-            print("Dumbass")
-            print(emailField.text!)
-            print(passwordField.text!)
+            DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { (error: NSError!, authData: FAuthData!) in
+                
+                if error !=  nil {
+                   
+                    print(error)
+                    
+                    if error.code == STATUS_ACCOUNT_NONEXIST {
+                        
+                        DataService.ds.REF.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
+                            
+                            if error != nil {
+                                self.showErrorAlert("Could not create account", msg: "Problem creating account. Try again")
+                            } else {
+                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: nil)
+                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                            }
+                        })
+                    } else {
+                        self.showErrorAlert("Could not log in", msg: "Please check your username or password")
+                    }
+                } else {
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                }
+            })
             
         } else {
             showErrorAlert("Email and Password required.", msg: "You must enter an email and a password.")
