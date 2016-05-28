@@ -25,6 +25,8 @@
 		CC726EAA1CF859FE0090DB6C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC726EA71CF859FE0090DB6C /* FBSDKCoreKit.framework */; };
 		CC726EAB1CF859FE0090DB6C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC726EA81CF859FE0090DB6C /* FBSDKLoginKit.framework */; };
 		CC726EAE1CF8B0EA0090DB6C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC726EAD1CF8B0EA0090DB6C /* DataService.swift */; };
+		CC9286481CFA533C003909CB /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9286471CFA533C003909CB /* FeedVC.swift */; };
+		CC92864A1CFA5431003909CB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9286491CFA5431003909CB /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		CC726EA71CF859FE0090DB6C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CC726EA81CF859FE0090DB6C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CC726EAD1CF8B0EA0090DB6C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		CC9286471CFA533C003909CB /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		CC9286491CFA5431003909CB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CC726E801CF62E0B0090DB6C /* ViewController.swift */,
+				CC9286471CFA533C003909CB /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				CC726E9C1CF631F20090DB6C /* MaterialView.swift */,
 				CC726EA11CF63B640090DB6C /* MaterialButton.swift */,
 				CC726EA31CF711860090DB6C /* MaterialTextField.swift */,
+				CC9286491CFA5431003909CB /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -314,6 +320,8 @@
 				CC726EAE1CF8B0EA0090DB6C /* DataService.swift in Sources */,
 				CC726E9D1CF631F20090DB6C /* MaterialView.swift in Sources */,
 				CC726E811CF62E0B0090DB6C /* ViewController.swift in Sources */,
+				CC9286481CFA533C003909CB /* FeedVC.swift in Sources */,
+				CC92864A1CFA5431003909CB /* PostCell.swift in Sources */,
 				CC726E7F1CF62E0B0090DB6C /* AppDelegate.swift in Sources */,
 				CC726EA01CF632CE0090DB6C /* Constants.swift in Sources */,
 				CC726EA21CF63B640090DB6C /* MaterialButton.swift in Sources */,
