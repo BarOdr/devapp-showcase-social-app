@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'devapp-showcase' do
 pod 'Firebase', '= 2.5.0'
+pod 'Alamofire', '~> 3.4'
 end
 

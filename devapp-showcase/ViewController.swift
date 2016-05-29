@@ -67,8 +67,7 @@ class ViewController: UIViewController {
         
         if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "" {
             DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { error, authData in
-                
-                let data = authData
+
                 if error !=  nil {
                    
                     print(error)
