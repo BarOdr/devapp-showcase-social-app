@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                         
                         //REFACTOR the code below later to make it safer (for example with if let), not to force unwrap
                         
-                        let user = ["provider": authData.provider!, "blah": "test"]
+                        let user = ["provider": authData.provider! , "blah": "test"]
                         DataService.ds.createFirebaseUser(authData.uid, user: user)
                         
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     @IBAction func attemptLogin(sender: UIButton!) {
         
         if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "" {
-            DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { (error: NSError!, authData: FAuthData!) in
+            DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                 
                 if error !=  nil {
                    
@@ -80,7 +80,13 @@ class ViewController: UIViewController {
                                 self.showErrorAlert("Could not create account", msg: "Problem creating account. Try again")
                             } else {
                                 NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
-                                DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: nil)
+
+                                DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { err, result in
+                                    let user = ["provider": authData.provider! , "blah": "emailtest"]
+                                    print(authData)
+                                    DataService.ds.createFirebaseUser(authData.uid, user: user)
+                                })
+                                
                                 self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                             }
                         })
