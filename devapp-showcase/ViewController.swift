@@ -68,6 +68,7 @@ class ViewController: UIViewController {
         if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "" {
             DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                 
+                let data = authData
                 if error !=  nil {
                    
                     print(error)
@@ -81,9 +82,11 @@ class ViewController: UIViewController {
                             } else {
                                 NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
 
-                                DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { err, result in
-                                    let user = ["provider": authData.provider! , "blah": "emailtest"]
+                                DataService.ds.REF.authUser(email, password: pwd, withCompletionBlock: { err, authData in
+                                    let user = ["provider": authData.provider!, "blah":"emailtest"]
+                                    print(authData.provider)
                                     print(authData)
+                                    print("Success!")
                                     DataService.ds.createFirebaseUser(authData.uid, user: user)
                                 })
                                 

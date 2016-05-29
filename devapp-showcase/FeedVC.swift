@@ -16,6 +16,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
+            
+        })
+        
 
     }
     
