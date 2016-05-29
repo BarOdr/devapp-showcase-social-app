@@ -27,6 +27,7 @@
 		CC726EAE1CF8B0EA0090DB6C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC726EAD1CF8B0EA0090DB6C /* DataService.swift */; };
 		CC9286481CFA533C003909CB /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9286471CFA533C003909CB /* FeedVC.swift */; };
 		CC92864A1CFA5431003909CB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9286491CFA5431003909CB /* PostCell.swift */; };
+		CCA86DC81CFBA07100AA3573 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA86DC71CFBA07100AA3573 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CC726EAD1CF8B0EA0090DB6C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		CC9286471CFA533C003909CB /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		CC9286491CFA5431003909CB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		CCA86DC71CFBA07100AA3573 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		CC726E921CF62E190090DB6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCA86DC71CFBA07100AA3573 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CC726E7F1CF62E0B0090DB6C /* AppDelegate.swift in Sources */,
 				CC726EA01CF632CE0090DB6C /* Constants.swift in Sources */,
 				CC726EA21CF63B640090DB6C /* MaterialButton.swift in Sources */,
+				CCA86DC81CFBA07100AA3573 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
