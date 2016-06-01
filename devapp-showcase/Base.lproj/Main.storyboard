@@ -250,22 +250,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-T3-wIf" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
+                                <rect key="frame" x="16" y="72" width="343" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOR-a3-BOB">
+                                        <rect key="frame" x="8" y="5" width="333" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something about your app..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rrS-3i-avT">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-hR-yx1">
+                                                <rect key="frame" x="250" y="0.0" width="30" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="IqJ-Jq-mJE"/>
+                                                    <constraint firstAttribute="width" constant="30" id="zdd-AK-1V7"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-OL-dgL" customClass="MaterialButton" customModule="devapp_showcase" customModuleProvider="target">
+                                                <rect key="frame" x="290" y="0.0" width="43" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="bG2-Cu-h7t"/>
+                                                    <constraint firstAttribute="width" constant="43" id="t8c-Xa-XKL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mOR-a3-BOB" firstAttribute="leading" secondItem="Fkc-T3-wIf" secondAttribute="leading" constant="5" id="GuY-Pl-cH5"/>
+                                    <constraint firstItem="mOR-a3-BOB" firstAttribute="top" secondItem="Fkc-T3-wIf" secondAttribute="top" id="QZc-Rb-eke"/>
+                                    <constraint firstAttribute="trailing" secondItem="mOR-a3-BOB" secondAttribute="trailing" constant="5" id="mEY-nM-Dbt"/>
+                                    <constraint firstAttribute="bottom" secondItem="mOR-a3-BOB" secondAttribute="bottom" id="mlQ-Vj-RBc"/>
+                                    <constraint firstAttribute="height" constant="40" id="sma-zc-Ch1"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="456" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DwE-aD-I0w">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="456" id="npQ-TH-JfU" customClass="PostCell" customModule="devapp_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="456"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" id="npQ-TH-JfU" customClass="PostCell" customModule="devapp_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="456"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="npQ-TH-JfU" id="RxQ-ev-Ylm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="456"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXa-aJ-RiS" userLabel="Material content" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="16" width="343" height="423.5"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXa-aJ-RiS" userLabel="Material content" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="15" width="343" height="423.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-2m-rge">
-                                                            <rect key="frame" x="8" y="20" width="327" height="383"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-2m-rge">
+                                                            <rect key="frame" x="8" y="20" width="327" height="384"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="31o-CV-zzy">
                                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -315,11 +357,12 @@
                                                                         <constraint firstAttribute="height" constant="125" id="s2t-jI-OQY"/>
                                                                     </constraints>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="S2C-Pf-Zz5">
-                                                                    <rect key="frame" x="44" y="195" width="240" height="188"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2C-Pf-Zz5">
+                                                                    <rect key="frame" x="44" y="195" width="240" height="189"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="S2C-Pf-Zz5" secondAttribute="height" multiplier="1:1" id="0kh-fu-EjF"/>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="MiG-a9-Reg"/>
@@ -393,18 +436,23 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96209935897435883" green="0.96209935897435883" blue="0.96209935897435883" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fkc-T3-wIf" firstAttribute="leading" secondItem="LNE-h9-Ctf" secondAttribute="leadingMargin" id="4zY-AH-YNj"/>
+                            <constraint firstItem="DwE-aD-I0w" firstAttribute="top" secondItem="Fkc-T3-wIf" secondAttribute="bottom" constant="8" id="5hB-WD-yPT"/>
                             <constraint firstItem="DwE-aD-I0w" firstAttribute="trailing" secondItem="LNE-h9-Ctf" secondAttribute="trailingMargin" id="AFh-Rs-JgH"/>
+                            <constraint firstItem="Fkc-T3-wIf" firstAttribute="trailing" secondItem="LNE-h9-Ctf" secondAttribute="trailingMargin" id="DBs-A8-hlD"/>
                             <constraint firstAttribute="trailing" secondItem="DwE-aD-I0w" secondAttribute="trailing" id="JOC-ck-ZUK"/>
                             <constraint firstItem="DwE-aD-I0w" firstAttribute="top" secondItem="eM5-q2-BSS" secondAttribute="bottom" id="PMe-HH-APa"/>
                             <constraint firstItem="21Q-8g-NfF" firstAttribute="top" secondItem="DwE-aD-I0w" secondAttribute="bottom" id="UNm-9x-GSv"/>
+                            <constraint firstItem="Fkc-T3-wIf" firstAttribute="top" secondItem="eM5-q2-BSS" secondAttribute="bottom" constant="8" id="fhp-wi-PjO"/>
                             <constraint firstItem="DwE-aD-I0w" firstAttribute="leading" secondItem="LNE-h9-Ctf" secondAttribute="leading" id="iAK-O7-pug"/>
                             <constraint firstItem="DwE-aD-I0w" firstAttribute="leading" secondItem="LNE-h9-Ctf" secondAttribute="leadingMargin" id="y11-8N-EUM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="AFh-Rs-JgH"/>
+                                <exclude reference="PMe-HH-APa"/>
                                 <exclude reference="y11-8N-EUM"/>
                             </mask>
                         </variation>
@@ -438,6 +486,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="100" height="100"/>
         <image name="code-icon-logo" width="318" height="281"/>
         <image name="code-logo" width="200" height="200"/>
         <image name="fb" width="530" height="350"/>
@@ -445,6 +494,5 @@
         <image name="ic_lock_outline" width="24" height="24"/>
         <image name="like" width="100" height="100"/>
         <image name="profile" width="1154" height="1154"/>
-        <image name="screen" width="872" height="1412"/>
     </resources>
 </document>

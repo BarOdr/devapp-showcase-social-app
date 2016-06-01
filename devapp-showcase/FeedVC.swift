@@ -38,6 +38,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.tableView.reloadData()
         })
+        
+        tableView.estimatedRowHeight = 456
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -65,6 +67,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             return PostCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let post = posts[indexPath.row]
+        if post.imageUrl == nil {
+            return 175
+        } else {
+            return tableView.estimatedRowHeight
         }
     }
 }
