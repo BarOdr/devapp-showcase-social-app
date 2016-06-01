@@ -126,6 +126,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         print(error)
                     }
                 }
+            } else {
+                self.postToFirebase(nil)
             }
         }
     }
@@ -135,6 +137,20 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func postToFirebase(imgUrl: String?) {
+        var post: Dictionary<String, AnyObject> = [
+            "description": postField.text!,
+            "likes": 0
+            
+        ]
         
+        if imgUrl != nil {
+            post["imageUrl"] = imgUrl!
+        }
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        imageSelectorImage.image = UIImage(named: "camera")
+        
+        tableView.reloadData()
     }
 }
