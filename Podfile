@@ -6,5 +6,6 @@ use_frameworks!
 target 'devapp-showcase' do
 pod 'Firebase', '= 2.5.0'
 pod 'Alamofire', '~> 3.4'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 

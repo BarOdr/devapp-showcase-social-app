@@ -8,15 +8,25 @@
 
 import UIKit
 import Firebase
+import Alamofire
+import SwiftyJSON
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageSelectorImage: UIImageView!
+    @IBOutlet weak var postField: UITextField!
     var posts = [Post]()
+    var imageSelected = false
+    var imagePicker: UIImagePickerController!
+    
     static var imageCache = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -77,5 +87,54 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             return tableView.estimatedRowHeight
         }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imageSelectorImage.image = image
+        imageSelected = true
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func makePost(sender: AnyObject) {
+        
+        if let txt = postField.text where txt != "" {
+            if let image = imageSelectorImage.image where imageSelected == true {
+                let urlStr = "https://post.imageshack.us/upload_api.php"
+                let url = NSURL(string: urlStr)!
+                let imgData = UIImageJPEGRepresentation(image, 0.2)!
+                let keyData = "12DJKPSU5fc3afbd01b1630cc718cae3043220f3".dataUsingEncoding(NSUTF8StringEncoding)!
+                let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+                Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    multipartFormData.appendBodyPart(data: keyData, name: "key")
+                    multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                }) { encodingResult in
+                    
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            if let data = response.data {
+                                print(data)
+                                let json = JSON(data: data)
+                                if let imgLink = json["links"]["image_link"].string {
+                                    print("LINK: \(imgLink)")
+                                    self.postToFirebase(imgLink)
+                                }
+                            }
+                        }
+                    case .Failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func selectImage(sender: UITapGestureRecognizer) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func postToFirebase(imgUrl: String?) {
+        
     }
 }

@@ -253,32 +253,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-T3-wIf" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
                                 <rect key="frame" x="16" y="72" width="343" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOR-a3-BOB">
-                                        <rect key="frame" x="8" y="5" width="333" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOR-a3-BOB">
+                                        <rect key="frame" x="5" y="0.0" width="333" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something about your app..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rrS-3i-avT">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something about your app..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rrS-3i-avT">
+                                                <rect key="frame" x="0.0" y="11" width="233" height="19"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-hR-yx1">
-                                                <rect key="frame" x="250" y="0.0" width="30" height="40"/>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-hR-yx1">
+                                                <rect key="frame" x="243" y="5" width="30" height="30"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IqJ-Jq-mJE"/>
                                                     <constraint firstAttribute="width" constant="30" id="zdd-AK-1V7"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="dXd-7l-hek" appends="YES" id="RjQ-0N-ZMC"/>
+                                                </connections>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-OL-dgL" customClass="MaterialButton" customModule="devapp_showcase" customModuleProvider="target">
-                                                <rect key="frame" x="290" y="0.0" width="43" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-OL-dgL" customClass="MaterialButton" customModule="devapp_showcase" customModuleProvider="target">
+                                                <rect key="frame" x="283" y="5" width="50" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="bG2-Cu-h7t"/>
-                                                    <constraint firstAttribute="width" constant="43" id="t8c-Xa-XKL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <state key="normal" title="POST">
                                                     <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="makePost:" destination="0L1-Z9-VJN" eventType="touchUpInside" id="PZx-wl-ZSx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -306,8 +312,8 @@
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXa-aJ-RiS" userLabel="Material content" customClass="MaterialView" customModule="devapp_showcase" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="15" width="343" height="423.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-2m-rge">
-                                                            <rect key="frame" x="8" y="20" width="327" height="384"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-2m-rge">
+                                                            <rect key="frame" x="8" y="20" width="327" height="385"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="31o-CV-zzy">
                                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -362,7 +368,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2C-Pf-Zz5">
-                                                                    <rect key="frame" x="44" y="195" width="240" height="189"/>
+                                                                    <rect key="frame" x="44" y="195" width="240" height="190"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="S2C-Pf-Zz5" secondAttribute="height" multiplier="1:1" id="0kh-fu-EjF"/>
                                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="240" id="MiG-a9-Reg"/>
@@ -459,10 +465,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="zzw-sQ-n8v"/>
                     <connections>
+                        <outlet property="imageSelectorImage" destination="lq7-hR-yx1" id="sBf-GB-UEO"/>
+                        <outlet property="postField" destination="rrS-3i-avT" id="m2F-ZF-0Y9"/>
                         <outlet property="tableView" destination="DwE-aD-I0w" id="vaR-fX-Zle"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp0-wo-lPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dXd-7l-hek">
+                    <connections>
+                        <action selector="selectImage:" destination="0L1-Z9-VJN" id="hRb-LE-JfM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1864.5" y="353.5"/>
         </scene>
