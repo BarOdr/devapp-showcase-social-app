@@ -16,6 +16,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageSelectorImage: UIImageView!
     @IBOutlet weak var postField: UITextField!
+    
     var posts = [Post]()
     var imageSelected = false
     var imagePicker: UIImagePickerController!
