@@ -151,7 +151,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
         firebasePost.setValue(post)
         imageSelectorImage.image = UIImage(named: "camera")
-        
+        imageSelected = false
         tableView.reloadData()
     }
 }
